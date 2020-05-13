@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :flats
+  resources :flats, only: [:index, :show, :new, :create]
 end

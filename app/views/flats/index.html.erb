@@ -1,0 +1,21 @@
+
+<div class="container">
+  <h2>All out flats (<%= Flat.count %>)</h2>
+  <div class="row">
+      <% @flats.each do |flat| %>
+        <div class="col-4">
+          <div class="card shadow rounded">
+            <div class="card-header">
+              <h4><%= flat.name %></h4>
+              <p><%= flat.address %></p>
+              <div class="d-flex">
+                <p class=d-flex><i class="tiny material-icons">people</i><%= flat.number_of_guests %></p>
+                <p class=d-flex><i class="tiny material-icons">euro_symbol</i><%= flat.price_per_night  %></p>
+              </div>
+            </div>
+              <%= link_to "More info", flat_path(flat), class: "p-3" %>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
